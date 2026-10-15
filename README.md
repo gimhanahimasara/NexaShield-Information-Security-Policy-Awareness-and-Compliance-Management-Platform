@@ -1,56 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+NexaShield - Information Security Policy Management & Compliance Platform
+NexaShield is a comprehensive, enterprise-grade Information Security Policy Management and Employee Compliance tracking system built using the Laravel framework. Designed in alignment with ISO/IEC 27001 information security management standards and data protection regulations (such as Sri Lanka's PDPA No. 9 of 2022), NexaShield streamlines policy lifecycle management, tracks employee training progress, and delivers real-time compliance analytics.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+🚀 Key Features
+👨‍💼 Administrator & Supervisor Portal
+Real-time Analytics Dashboard: Dynamic oversight of organizational compliance using interactive charts (Chart.js).
 
-## About Laravel
+Policy Lifecycle Management: Create, update, version control, and publish security policies (e.g., AUP, Password Policy, BYOD).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Quiz & Assessment Builder: Design knowledge verification quizzes linked to security policies to ensure active comprehension.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Employee Compliance Reporting: Track individual and overall compliance levels (Fully Compliant, Partially Compliant, Non-Compliant).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Automated Audit Reports: Export detailed compliance reports in PDF format with custom styling (DomPDF).
 
-## Learning Laravel
+Audit Logging: System-wide activity logging for security oversight and administrative transparency.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+🧑‍💻 Employee Portal
+Personalized Progress Dashboard: Real-time visibility into required policy readings and quiz completions.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Policy Review & Acknowledgment: Interactive interface to read, review version histories, and digitally acknowledge policy compliance.
 
-## Laravel Sponsors
+Interactive Quizzes: Real-time assessment taking with instant scoring feedback.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Recent Activity Timeline: Live-updating timeline displaying recent policy acknowledgments and quiz completions.
 
-### Premium Partners
+🛠️ Technology Stack
+Backend Framework: Laravel (PHP MVC Architecture)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Frontend Templates: Blade Templating Engine, HTML5, CSS3
 
-## Contributing
+Styling & UI: Tailwind CSS (Custom Cyberpunk/Dark Cyber Security Theme)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Database: MySQL / MariaDB
 
-## Code of Conduct
+Data Visualization: Chart.js (Dynamic Pie & Bar Charts)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+PDF Generation: barryvdh/laravel-dompdf
 
-## Security Vulnerabilities
+Authentication & Authorization: Custom Role-Based Access Control (RBAC) via Laravel Authentication
+
+🔒 Security Measures Implemented
+Role-Based Access Control (RBAC): Strict view and route protection isolating Administrator, Editor, Supervisor, and Employee actions.
+
+CSRF Protection: Standard Cross-Site Request Forgery token enforcement on all POST/PUT/DELETE forms.
+
+Data Protection & Encryption: Password hashing using Bcrypt and compliant data handling practices.
+
+SQL Injection Prevention: Eloquent ORM parameter binding and strict Request Validation.
+
+📁 Repository Structure Overview
+Plaintext
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/       # Core application controllers (PolicyController, etc.)
+│   │   └── Middleware/        # Authentication and RBAC Middleware
+│   └── Models/                # Policy, PolicyAcknowledgment, Quiz, QuizResult, AuditLog models
+├── config/                    # Application and timezone configurations
+├── database/
+│   ├── migrations/            # Database schema structure definition
+│   └── seeders/               # Test and initial setup database seeders
+├── resources/
+│   └── views/
+│       ├── admin/             # Administrative views, reports, and dashboards
+│       ├── employee/          # Employee policy and assessment views
+│       └── layouts/           # Main application Blade layouts
+└── routes/
+    └── web.php                # Application route definitions
+⚡ Quick Installation Guide
+Clone the repository:
+
+Bash
+git clone https://github.com/your-username/NexaShield.git
+cd NexaShield
+Install Composer dependencies:
+
+Bash
+composer install
+Set up Environment File:
+
+Bash
+cp .env.example .env
+php artisan key:generate
+Configure Database & Timezone in .env:
+
+Code snippet
+APP_NAME=NexaShield
+APP_TIMEZONE=Asia/Colombo
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nexashield_db
+DB_USERNAME=root
+DB_PASSWORD=
+Run Migrations and Seeders:
+
+Bash
+php artisan migrate --seed
+Serve Application:
+
+Bash
+php artisan serve
+Access the system at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+📜 License
+This project is developed for academic and demonstration purposes.
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
