@@ -74,93 +74,123 @@
 ##
 * 🔗 Link for full project : https://drive.google.com/file/d/1hga7TX14Xd8TsV4gV3hDvhFZE-4MI1Pn/view?usp=sharing
 
-⚡ Quick Installation Guide
+---
 
-Follow the instructions below to download, configure, and run NexaShield on your local development environment.
+## ⚡ Quick Installation Guide
 
-You can either download the project source code as a ZIP archive from Google Drive or clone the repository from GitHub.
+Set up and run **NexaShield** on your local machine by following the installation instructions below.
 
-📋 Prerequisites
+### 📋 Prerequisites
 
-Before getting started, ensure that you have installed the following tools:
+Before installing NexaShield, ensure that you have the following tools installed:
 
-PHP — Compatible with your project's Laravel version.
-Composer — PHP dependency manager.
-MySQL — Database server.
-Node.js and npm — Required if the project uses frontend asset compilation.
-Git (optional) — Required if you want to clone the repository.
+* 🐘 **PHP** — Compatible with your Laravel version.
+* 📦 **Composer** — PHP dependency manager.
+* 🗄️ **MySQL** — Database management system.
+* 🟢 **Node.js & npm** — Required if the project uses frontend asset compilation.
+* 🔧 **Git** — Optional, if cloning the repository from GitHub.
 
-Note: You can use XAMPP, WAMP, or Laragon to manage your local PHP and MySQL environment.
+> 💡 **Tip:** You can use [XAMPP](https://www.apachefriends.org/), [WAMP](https://www.wampserver.com/), or [Laragon](https://laragon.org/) to manage your local PHP and MySQL environment.
 
-1. 📥 Download & Extract the Source Code
+---
 
-Download the NexaShield source code using the Google Drive link below:
+### 📥 1. Download the Source Code
 
-👉 Download NexaShield Source Code (Google Drive)
+Download the NexaShield source code from Google Drive:
 
-Replace YOUR_GOOGLE_DRIVE_LINK_HERE with your actual Google Drive download or sharing link.
+<div align="center">
 
-Alternatively, clone the repository if the source code is hosted on GitHub:
+### 📦 [Download NexaShield Source Code](YOUR_GOOGLE_DRIVE_LINK_HERE)
 
+</div>
+
+Alternatively, clone the repository directly from GitHub:
+
+```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
+```
 
-If you downloaded a ZIP archive, extract it into your preferred directory.
+If you downloaded the project as a ZIP archive, extract it into your preferred directory.
 
-For example:
+**Example directory:**
 
+```text
 C:\projects\NexaShield
-2. 💻 Open a Terminal in the Project Directory
+```
 
-Open Command Prompt, PowerShell, or your preferred terminal and navigate to the extracted project directory.
+---
 
-Windows:
+### 💻 2. Open the Project Directory
 
+Open **Command Prompt**, **PowerShell**, or your preferred terminal and navigate to the project directory.
+
+**Windows:**
+
+```bash
 cd C:\projects\NexaShield
+```
 
-Linux / macOS:
+**Linux / macOS:**
 
+```bash
 cd /path/to/NexaShield
+```
 
-Ensure that you are in the project root directory, where the artisan file and composer.json file are located.
+> 📌 Ensure that you are in the project root directory containing the `artisan` and `composer.json` files.
 
-3. 📦 Install PHP Dependencies
+---
 
-Install the required Laravel packages and PHP dependencies using Composer:
+### 📦 3. Install PHP Dependencies
 
+Install the required Laravel packages and dependencies using Composer:
+
+```bash
 composer install
+```
 
-Wait until Composer finishes installing the dependencies.
+This command installs the PHP dependencies defined in the project's `composer.lock` file.
 
-4. ⚙️ Configure the Environment File
+---
 
-Create a local .env file by copying the example environment configuration.
+### ⚙️ 4. Configure the Environment File
 
-Windows Command Prompt:
+Create a local `.env` configuration file by copying the example environment file.
 
+**Windows Command Prompt:**
+
+```cmd
 copy .env.example .env
+```
 
-PowerShell, Linux, or macOS:
+**PowerShell / Linux / macOS:**
 
+```bash
 cp .env.example .env
+```
 
-The .env file contains environment-specific settings, including database credentials, application configuration, and other local development options.
+> 🔐 **Security Notice:** Never commit your `.env` file or expose sensitive credentials and application secrets in a public GitHub repository.
 
-Important: Never commit your .env file or expose database credentials and application secrets in a public repository.
+---
 
-5. 🔑 Generate the Application Key
+### 🔑 5. Generate the Application Key
 
 Generate a unique application encryption key for Laravel:
 
+```bash
 php artisan key:generate
+```
 
-This command generates the APP_KEY value in your .env file.
+This command automatically generates the `APP_KEY` value in your `.env` file.
 
-6. 🗄️ Configure the Database & Timezone
+---
 
-Open the .env file in a text editor, such as Visual Studio Code or Notepad++, and configure your application and database settings.
+### 🗄️ 6. Configure the Database
 
-Example configuration:
+Open the `.env` file in your preferred text editor and configure your application and database settings.
 
+**Example configuration:**
+
+```dotenv
 APP_NAME=NexaShield
 APP_ENV=local
 APP_DEBUG=true
@@ -173,89 +203,144 @@ DB_PORT=3306
 DB_DATABASE=nexashield_db
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
-Database setup:
+#### 🛠️ Database Setup
 
-Start your MySQL server using XAMPP, WAMP, Laragon, or another compatible environment.
-Open your database management tool, such as phpMyAdmin.
-Create a database named nexashield_db.
-Update the database username and password in the .env file according to your local configuration.
+1. Start your MySQL server using XAMPP, WAMP, Laragon, or another compatible environment.
+2. Open **phpMyAdmin** or your preferred database management tool.
+3. Create a new database named `nexashield_db`.
+4. Update the database credentials in your `.env` file according to your local MySQL configuration.
 
-Note: The database credentials above are examples. Update them to match your local MySQL configuration. An empty database password should only be used if that is how your local MySQL account is configured.
+> ⚠️ **Note:** The database credentials above are examples. Configure them according to your local environment. An empty database password should only be used if that matches your MySQL configuration.
 
-7. 🛠️ Run Database Migrations & Seeders
+---
 
-Run the following command to create the database tables and populate the initial data defined by the project's migrations and seeders:
+### 🛠️ 7. Run Database Migrations & Seeders
 
+Create the required database tables and populate the initial data defined by the project's migrations and seeders:
+
+```bash
 php artisan migrate --seed
+```
 
-This command may initialize database components such as:
+Depending on the migrations and seeders included in the project, this process may initialize:
 
-User accounts
-Policies
-Quizzes
-Audit logs
-Other application-specific tables and sample records
+* 👤 User accounts
+* 📜 Security policies
+* 📝 Quizzes and assessments
+* 📋 Audit logs
+* ⚙️ Other application-specific records
 
-The exact tables and initial records depend on the migrations and seeders included in the project.
+> 📌 If a default administrator account is created by the seeders, check the project's documentation or seeder files for the login credentials.
 
-Important: If the project includes a default administrator account, check the project's documentation or seeder files for its login credentials. Change any default credentials before deploying the application to a production environment.
+---
 
-8. 🚀 Start the Development Server
+### 🚀 8. Start the Development Server
 
 Start the Laravel development server using Artisan:
 
+```bash
 php artisan serve
+```
 
-Once the server starts successfully, the terminal will display a local development URL.
+Once the server starts successfully, the terminal will display the local development URL.
 
-9. 🌐 Access NexaShield
+---
 
-Open your web browser and navigate to:
+### 🌐 9. Access NexaShield
 
-👉 http://127.0.0.1:8000
+Open your web browser and navigate to the following address:
 
-NexaShield should now be accessible on your local machine.
+<div align="center">
 
-🧰 Troubleshooting
+### 🔗 http://127.0.0.1:8000
 
-If you encounter problems during installation, try the following commands.
+**🛡️ NexaShield is ready to run locally!**
 
-Clear the application configuration cache:
+</div>
 
+---
+
+## 🔧 Troubleshooting
+
+If you encounter issues during installation, try the following solutions.
+
+<details>
+<summary>🧹 <strong>Clear Laravel Configuration & Cache</strong></summary>
+
+```bash
 php artisan config:clear
 php artisan cache:clear
+```
 
-Refresh Composer's autoloader:
+</details>
 
+<details>
+<summary>📦 <strong>Refresh Composer Autoload Files</strong></summary>
+
+```bash
 composer dump-autoload
+```
 
-Check the installed PHP version:
+</details>
 
+<details>
+<summary>🔍 <strong>Check PHP & Composer Versions</strong></summary>
+
+```bash
 php -v
-
-Check the Composer installation:
-
 composer --version
+```
 
-Check the database connection:
+</details>
 
-Ensure the MySQL server is running.
-Verify the database name and credentials in .env.
-Confirm that the nexashield_db database exists.
-Ensure that the installed PHP version has the required database extensions enabled.
+<details>
+<summary>🗄️ <strong>Resolve Database Connection Issues</strong></summary>
 
-If the project uses frontend assets managed by npm, install the dependencies and build the assets when required:
+* Ensure that the MySQL server is running.
+* Verify the database name and credentials in `.env`.
+* Confirm that the `nexashield_db` database exists.
+* Ensure that the required PHP database extensions are enabled.
 
+</details>
+
+<details>
+<summary>🎨 <strong>Resolve Frontend Asset Issues</strong></summary>
+
+If the project includes a `package.json` file and requires frontend asset compilation, run:
+
+```bash
 npm install
 npm run build
+```
 
-Note: Run the npm commands only if the project includes a package.json file and requires frontend asset compilation.
+</details>
 
-✅ Installation Complete!
+---
 
-Congratulations! 🎉 You have successfully completed the local setup process for NexaShield.
+## ✅ Installation Complete!
 
-You can now explore the application's features and begin working with the project in your local development environment.
+🎉 Congratulations! You have successfully completed the local setup process for **NexaShield**.
 
-Local Application URL: http://127.0.0.1:8000
+You can now explore the application's features, manage security policies, conduct employee assessments, and monitor compliance.
+
+<div align="center">
+
+| Component           | Details                                 |
+| :------------------ | :-------------------------------------- |
+| 🛡️ **Application** | NexaShield                              |
+| ⚙️ **Framework**    | Laravel                                 |
+| 🐘 **Backend**      | PHP                                     |
+| 🗄️ **Database**    | MySQL                                   |
+| 🎨 **Frontend**     | Tailwind CSS                            |
+| 🌏 **Timezone**     | Asia/Colombo                            |
+| 🌐 **Local URL**    | [127.0.0.1:8000](http://127.0.0.1:8000) |
+
+---
+
+### 🛡️ NexaShield
+
+*Secure. Monitor. Protect.*
+
+</div>
