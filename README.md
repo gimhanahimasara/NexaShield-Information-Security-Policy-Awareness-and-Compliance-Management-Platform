@@ -1,113 +1,79 @@
-NexaShield - Information Security Policy Management & Compliance Platform
-NexaShield is a comprehensive, enterprise-grade Information Security Policy Management and Employee Compliance tracking system built using the Laravel framework. Designed in alignment with ISO/IEC 27001 information security management standards and data protection regulations (such as Sri Lanka's PDPA No. 9 of 2022), NexaShield streamlines policy lifecycle management, tracks employee training progress, and delivers real-time compliance analytics.
+<div align="center">
 
-🚀 Key Features
-👨‍💼 Administrator & Supervisor Portal
-Real-time Analytics Dashboard: Dynamic oversight of organizational compliance using interactive charts (Chart.js).
+# 🛡️ NexaShield
 
-Policy Lifecycle Management: Create, update, version control, and publish security policies (e.g., AUP, Password Policy, BYOD).
+### Information Security Policy Management & Compliance Platform
 
-Quiz & Assessment Builder: Design knowledge verification quizzes linked to security policies to ensure active comprehension.
+[![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![License](https://img.shields.io/badge/License-Academic-blue.svg?style=for-the-badge)]()
 
-Employee Compliance Reporting: Track individual and overall compliance levels (Fully Compliant, Partially Compliant, Non-Compliant).
+*Enterprise-grade security policy management, compliance tracking, and audit reporting framework aligned with **ISO/IEC 27001** and Sri Lanka **PDPA No. 9 of 2022**.*
 
-Automated Audit Reports: Export detailed compliance reports in PDF format with custom styling (DomPDF).
+---
 
-Audit Logging: System-wide activity logging for security oversight and administrative transparency.
+</div>
 
-🧑‍💻 Employee Portal
-Personalized Progress Dashboard: Real-time visibility into required policy readings and quiz completions.
+## 📖 Table of Contents
+- [About NexaShield](#-about-nexashield)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Security Architecture](#-security-architecture)
+- [Repository Structure](#-repository-structure)
+- [Installation Guide](#-installation-guide)
 
-Policy Review & Acknowledgment: Interactive interface to read, review version histories, and digitally acknowledge policy compliance.
+---
 
-Interactive Quizzes: Real-time assessment taking with instant scoring feedback.
+## 🧐 About NexaShield
 
-Recent Activity Timeline: Live-updating timeline displaying recent policy acknowledgments and quiz completions.
+**NexaShield** is a centralized compliance management application built to bridge the gap between organizational security governance and employee awareness. It allows administrators to publish information security policies, enforce knowledge verification quizzes, and dynamically monitor organizational compliance using real-time telemetry.
 
-🛠️ Technology Stack
-Backend Framework: Laravel (PHP MVC Architecture)
+---
 
-Frontend Templates: Blade Templating Engine, HTML5, CSS3
+## 🚀 Key Features
 
-Styling & UI: Tailwind CSS (Custom Cyberpunk/Dark Cyber Security Theme)
+### 👨‍💼 Administrator & Supervisor Portal
+* 📊 **Real-time Analytics Dashboard:** Interactive data monitoring with `Chart.js` for compliance percentages.
+* 📜 **Policy Management:** Full lifecycle support for creating, updating, and versioning security policies.
+* 📝 **Quiz & Assessment Builder:** Knowledge verification quizzes linked directly to security policies.
+* 📋 **Compliance Monitoring:** Real-time metrics categorizing users as *Fully Compliant*, *Partially Compliant*, or *Non-Compliant*.
+* 📄 **Automated PDF Exports:** Download comprehensive compliance audit reports formatted via `DomPDF`.
+* 🛡️ **Audit Logs:** Immutable audit log history for critical system actions.
 
-Database: MySQL / MariaDB
+### 🧑‍💻 Employee Portal
+* 📈 **Progress Summary:** Clean overview of policy read ratios and completed assessments.
+* 📑 **Interactive Policy Review:** Digital policy reader with dynamic acknowledgment workflows.
+* 🎯 **Knowledge Assessments:** Real-time quiz execution with instant score feedback.
+* ⏱️ **Recent Activity Timeline:** Live timeline logging recent policy acknowledgments and completed quizzes.
 
-Data Visualization: Chart.js (Dynamic Pie & Bar Charts)
+---
 
-PDF Generation: barryvdh/laravel-dompdf
+## 🛠️ Tech Stack
 
-Authentication & Authorization: Custom Role-Based Access Control (RBAC) via Laravel Authentication
+| Category | Technology |
+| :--- | :--- |
+| **Backend** | [Laravel Framework](https://laravel.com/) (PHP MVC) |
+| **Frontend** | Blade Templates, HTML5, CSS3 |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) *(Dark Cyber Theme)* |
+| **Database** | MySQL / MariaDB |
+| **Analytics** | [Chart.js](https://www.chartjs.org/) |
+| **PDF Engine** | [DomPDF](https://github.com/barryvdh/laravel-dompdf) |
+| **Security** | Role-Based Access Control (RBAC), CSRF Tokens, Bcrypt Hashing |
 
-🔒 Security Measures Implemented
-Role-Based Access Control (RBAC): Strict view and route protection isolating Administrator, Editor, Supervisor, and Employee actions.
+---
 
-CSRF Protection: Standard Cross-Site Request Forgery token enforcement on all POST/PUT/DELETE forms.
+## 🔒 Security Architecture
 
-Data Protection & Encryption: Password hashing using Bcrypt and compliant data handling practices.
-
-SQL Injection Prevention: Eloquent ORM parameter binding and strict Request Validation.
-
-📁 Repository Structure Overview
-Plaintext
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/       # Core application controllers (PolicyController, etc.)
-│   │   └── Middleware/        # Authentication and RBAC Middleware
-│   └── Models/                # Policy, PolicyAcknowledgment, Quiz, QuizResult, AuditLog models
-├── config/                    # Application and timezone configurations
-├── database/
-│   ├── migrations/            # Database schema structure definition
-│   └── seeders/               # Test and initial setup database seeders
-├── resources/
-│   └── views/
-│       ├── admin/             # Administrative views, reports, and dashboards
-│       ├── employee/          # Employee policy and assessment views
-│       └── layouts/           # Main application Blade layouts
-└── routes/
-    └── web.php                # Application route definitions
-⚡ Quick Installation Guide
-Clone the repository:
-
-Bash
-git clone https://github.com/your-username/NexaShield.git
-cd NexaShield
-Install Composer dependencies:
-
-Bash
-composer install
-Set up Environment File:
-
-Bash
-cp .env.example .env
-php artisan key:generate
-Configure Database & Timezone in .env:
-
-Code snippet
-APP_NAME=NexaShield
-APP_TIMEZONE=Asia/Colombo
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=nexashield_db
-DB_USERNAME=root
-DB_PASSWORD=
-Run Migrations and Seeders:
-
-Bash
-php artisan migrate --seed
-Serve Application:
-
-Bash
-php artisan serve
-Access the system at [http://127.0.0.1:8000](http://127.0.0.1:8000).
-
-📜 License
-This project is developed for academic and demonstration purposes.
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```text
+┌────────────────┐     ┌─────────────────────┐     ┌──────────────────────┐
+│  Employee /    │ ──> │ Role-Based Access   │ ──> │ Controller Logic     │
+│  Administrator │     │ Control Middleware  │     │ (PolicyController)   │
+└────────────────┘     └─────────────────────┘     └──────────────────────┘
+                                                              │
+                                                              ▼
+                                                   ┌──────────────────────┐
+                                                   │   Database & Audit   │
+                                                   │   Log Telemetry      │
+                                                   └──────────────────────┘
