@@ -104,14 +104,6 @@ Download the NexaShield source code from Google Drive:
 
 </div>
 
-Alternatively, clone the repository directly from GitHub:
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-If you downloaded the project as a ZIP archive, extract it into your preferred directory.
-
 **Example directory:**
 
 ```text
