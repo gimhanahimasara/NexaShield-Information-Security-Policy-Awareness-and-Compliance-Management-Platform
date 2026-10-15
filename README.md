@@ -73,3 +73,31 @@
 ```
 ##
 * 🔗 Link for full project : https://drive.google.com/file/d/1hga7TX14Xd8TsV4gV3hDvhFZE-4MI1Pn/view?usp=sharing
+
+## ⚡ Quick Installation Guide
+
+Since the project is hosted via Google Drive, follow these simple steps to set up and run NexaShield locally:
+
+1. **Download Project Archive:**
+   * Download the NexaShield project folder from the official Google Drive link below:
+     👉 [Download NexaShield from Google Drive](https://drive.google.com/file/d/1hga7TX14Xd8TsV4gV3hDvhFZE-4MI1Pn/view?usp=sharing)
+   * Extract the downloaded archive to your local workspace or web directory.
+
+2. **Configure Environment File:**
+   * Open a terminal inside the project folder and make sure the `.env` file is properly configured. If needed, generate the application key:
+     ```bash
+     php artisan key:generate
+     ```
+
+3. **Set Database & Timezone in `.env`:**
+   Open your `.env` file and verify that your database credentials and timezone are correctly set:
+   ```env
+   APP_NAME=NexaShield
+   APP_TIMEZONE=Asia/Colombo
+
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nexashield_db
+   DB_USERNAME=root
+   DB_PASSWORD=
