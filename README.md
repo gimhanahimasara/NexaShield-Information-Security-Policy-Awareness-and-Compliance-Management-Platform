@@ -16,13 +16,6 @@
 
 </div>
 
-## 📖 Table of Contents
-- [About NexaShield](#-about-nexashield)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Security Architecture](#-security-architecture)
-- [Repository Structure](#-repository-structure)
-- [Installation Guide](#-installation-guide)
 
 ---
 
